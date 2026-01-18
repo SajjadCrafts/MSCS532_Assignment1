@@ -118,4 +118,16 @@ def interactive_demo():
         except Exception as e:
             print(f"An error occurred: {e}")
 
+def main():
+    """
+    Main function to run the insertion sort demonstration.
+    """
+    print("MSCS532 Assignment 1: Insertion Sort Algorithm")
+    print("Sorting in monotonically decreasing order\n")
+    
+    # Run the predefined tests
+    test_insertion_sort_decreasing()
 
+if __name__ == "__main__":
+    # Run the main function
+    main()
