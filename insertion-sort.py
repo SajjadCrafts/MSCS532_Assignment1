@@ -82,4 +82,40 @@ def test_insertion_sort_decreasing():
     print("=" * 50)
     print("All tests completed!")
 
+def interactive_demo():
+    """
+    Interactive demo that allows users to input their own arrays.
+    """
+    print("\nInteractive Insertion Sort Demo")
+    print("=" * 50)
+    print("Enter a list of numbers separated by spaces.")
+    print("Example: 5 2 8 1 9 3")
+    
+    while True:
+        try:
+            user_input = input("\nEnter your numbers (or 'quit' to exit): ").strip()
+            
+            if user_input.lower() == 'quit':
+                print("Exiting demo. Goodbye!")
+                break
+            
+            if not user_input:
+                print("Please enter some numbers.")
+                continue
+            
+            # Convert input string to list of integers
+            user_array = [int(x) for x in user_input.split()]
+            
+            print(f"\nOriginal array: {user_array}")
+            
+            # Sort the array
+            sorted_array = insertion_sort_decreasing(user_array.copy())
+            
+            print(f"Sorted (decreasing): {sorted_array}")
+            
+        except ValueError:
+            print("Invalid input! Please enter only numbers separated by spaces.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
 
